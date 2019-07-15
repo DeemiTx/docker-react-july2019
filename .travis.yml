@@ -6,7 +6,7 @@ before_install:
   - docker build -t nafzaltx/docker-react-july2019 -f Dockerfile.dev .
 
 script:
-  - docker run nafzaltx/docker-react-july2019 npm run test -- --coverage
+  - docker run -e CI=true nafzaltx/docker-react-july2019 npm run test
 
 deploy:
   provider: elasticbeanstalk
